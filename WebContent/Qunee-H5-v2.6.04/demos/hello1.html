@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello Qunee for HTML5</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+<body style="margin: 0px">
+<div style="position: absolute; width: 100%; top: 0px; bottom: 0px;" id="canvas"></div>
+<!--<script src="http://demo.qunee.com/lib/qunee-min.js"></script>-->
+<script src="./lib/qunee-min.js"></script>
+<script src="./lib/PC.js"></script>
+<script src="./lib/Mobile.js"></script>
+
+<script>
+    var graph = new Q.Graph('canvas');
+    
+    function createDedge(from,to){
+        var edge = graph.createEdge(from,to);
+        edge.setStyle(Q.Styles.ARROW_FROM, true);  
+        return edge;
+    }  //定义双向箭头连线
+
+    function createMnode(name,x,y,image){
+        var node = graph.createNode(name,x,y);
+        if(image){
+            node.image = image;
+        }
+        return node;
+    }  //定义图标
+
+    var controler = createMnode("Controler", 0, -300,'Q-server');
+    var mesh1 = createMnode("Mesh1", 0, -150,'Q-exchanger2');
+    var mesh2 = createMnode("Mesh2", -300, 0,'Q-exchanger2');
+    var mesh3 = createMnode("Mesh3", 0, 150,'Q-exchanger2');
+    var mesh4 = createMnode("Mesh4", 300, 0,'Q-exchanger2');
+   
+    var edge0 = createDedge( controler, mesh1); 
+    var edge1 = createDedge( mesh1, mesh2);
+    var edge2 = createDedge( mesh2, mesh3);
+    var edge3 = createDedge( mesh3, mesh4);
+    var edge4 = createDedge( mesh4, mesh1);
+    
+    var ap11 = createMnode("AP1-1", -75, 0,'PC.svg');
+    var ap12 = createMnode("AP1-2", 75, 0,'Mobile.svg');
+    var ap21 = createMnode("AP2-1", -375, 150,'PC.svg');
+    var ap22 = createMnode("AP2-2", -225, 150,'Mobile.svg');
+    var ap31 = createMnode("AP3-1", -75, 300,'PC.svg');
+    var ap32 = createMnode("AP3-2", 75, 300,'Mobile.svg');
+    var ap41 = createMnode("AP4-1", 225, 150,'PC.svg');
+    var ap42 = createMnode("AP4-2", 375, 150,'Mobile.svg');
+
+    var edge5 = createDedge( ap11, mesh1);
+    var edge6 = createDedge( ap12, mesh1);
+    var edge7 = createDedge( ap21, mesh2);
+    var edge8 = createDedge( ap22, mesh2);
+    var edge9 = createDedge( ap31, mesh3);
+    var edge10 = createDedge( ap32, mesh3);
+    var edge11 = createDedge( ap41, mesh4);
+    var edge12 = createDedge( ap42, mesh4);
+
+</script>
+</body>
+</html>
