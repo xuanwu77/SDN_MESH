@@ -53,7 +53,8 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                         <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-messages">
+                    <!-- 第一个下拉表 -->
+                    <!-- <ul class="dropdown-menu dropdown-messages">
                         <li>
                             <a href="#">
                                 <div>
@@ -96,15 +97,16 @@
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
-                    </ul>
-                    <!-- /.dropdown-messages -->
+                    </ul> -->
+                    
                 </li>
-                <!-- /.dropdown -->
+             
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                         <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-tasks">
+                   <!--  第二个下拉表 -->
+<!--                     <ul class="dropdown-menu dropdown-tasks">
                         <li>
                             <a href="#">
                                 <div>
@@ -175,15 +177,16 @@
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
-                    </ul>
-                    <!-- /.dropdown-tasks -->
-                </li>
+                    </ul> 
+                    /.dropdown-tasks
+                </li> -->
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                         <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-alerts">
+                   <!--  第三个下拉表 -->
+<!--                     <ul class="dropdown-menu dropdown-alerts">
                         <li>
                             <a href="#">
                                 <div>
@@ -236,14 +239,15 @@
                             </a>
                         </li>
                     </ul>
-                    <!-- /.dropdown-alerts -->
+ -->                    <!-- /.dropdown-alerts -->
                 </li>
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-user">
+                    <!-- 第四个下拉表 -->
+<!--                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
@@ -252,7 +256,7 @@
                         <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
-                    <!-- /.dropdown-user -->
+ -->                    <!-- /.dropdown-user -->
                 </li>
                 <!-- /.dropdown -->
             </ul>
