@@ -5,26 +5,27 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBUtil {
-	//Á¬½ÓÊý¾Ý¿â£¬·µ»Ø»ñµÃÊý¾Ý¿âµÄÁ¬½Ó
-	private static final String URL="jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;characterEncoding=utf-8";
-	private static final String USER="root";
-	private static final String PASSWORD="111111";
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿â£¬ï¿½ï¿½ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private static final String URL = "jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;characterEncoding=utf-8";
+	private static final String USER = "root";
+	private static final String PASSWORD = "111111";
 	private static Connection conn;
-	static{	
+	static {
 		try {
-			//1¡¢¼ÓÔØÇý¶¯³ÌÐò
+			// 1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			Class.forName("com.mysql.jdbc.Driver");
-			//2¡¢»ñµÃÊý¾Ý¿âÁ¬½Ó
-			conn=DriverManager.getConnection(URL, USER, PASSWORD);
+			// 2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½
+			conn = DriverManager.getConnection(URL, USER, PASSWORD);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
-	public static Connection getConnection(){
+
+	public static Connection getConnection() {
 		return conn;
-		
+
 	}
 }

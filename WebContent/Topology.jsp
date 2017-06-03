@@ -361,53 +361,170 @@
 	<script src="./Qunee-H5-v2.6.04/demos/lib/PC.js"></script>
   	<script src="./Qunee-H5-v2.6.04/demos/lib/Mobile.js"></script>
   	<script>
+  	var graph = new Q.Graph('page-inner');
+  	//定义双向箭头连线
+    function createDedge(from,to){
+        var edge = graph.createEdge(from,to);
+        edge.setStyle(Q.Styles.ARROW_FROM, true);  
+        return edge;
+    }  
+    //定义图标
+    function createMnode(name,x,y,image){
+        var node = graph.createNode(name,x,y);
+        if(image){
+            node.image = image;
+        }
+        return node;
+    }  
+  	var controler = createMnode("Controler", 0, -500,'Q-server');
+  	var xhr = new XMLHttpRequest();
+	function createXhr() {
+		xhr.onreadystatechange = function() {
+			console.log(xhr.responseText);
+			if (xhr.readyState == 4 && xhr.status == 200
+					&& xhr.responseText != "") {
+				var str = xhr.responseText;
+				var arr = str.split("*");
+				
+				//3号节点邻居表的信息
+				var arr3 = arr[2].split(':');
+				if(!arr3.length == 0){
+					var mesh3 = createMnode("Mesh", 0, -350,'Q-exchanger2');
+					createDedge(controller,mesh3);
+					var node3_arr = [];
+					for (var i = 0; i < Math.floor(arr3.length /4); i++) {
+						node3_arr.push(arr1[4*i]);
+					}		
+					for(var j=0;j<node3_arr.length;j++){
+						//先判断node3_arr[0]的数字
+						if(node3_arr[j]==2){
+							//显示
+		   					var mesh2 = createMnode("Mesh", -300, -200,'Q-exchanger2');
+							//连线
+		   					createDedge( mesh3, mesh2); 
+						}
+						if(node3_arr[j]==4){
+							//显示
+							 var mesh4 = createMnode("Mesh", 300, -200,'Q-exchanger2');
+							 graph.createEdge(mesh3, mesh4); 
+							//连线
+						}
+						if(node3_arr[j]==5){
+							//显示
+							var mesh5 = createMnode("Mesh", 0, -50,'Q-exchanger2');
+								//连线
+							graph.createEdge(mesh3, mesh5); 
+						}
+						
+					}
+					
+					
+				}
+				
+				//2号节点邻居表的信息
+				var arr2 = arr[1].split(':');
+				if(!arr2.length == 0){
+				var mesh2 = createMnode("Mesh", -300, -200,'Q-exchanger2');	
+				var node2_arr = [];
+				for (var i = 0; i < Math.floor(arr2.length /4); i++) {
+					node2_arr.push(arr2[4*i]);
+				}		
+				for(var j=0;j<node2_arr.length;j++){
+					//先判断node3_arr[0]的数字
+					if(node2_arr[j]==3){
+						//显示
+	   					var mesh3 = createMnode("Mesh", 0, -350,'Q-exchanger2');
+						//连线
+	   					graph.createEdeg( mesh2, mesh3); 
+					}
+					if(node2_arr[j]==4){
+						//显示
+						 var mesh4 = createMnode("Mesh", 300, -200,'Q-exchanger2');
+						 graph.createEdeg(mesh2, mesh4); 
+						//连线
+					}
+					if(node2_arr[j]==5){
+							//显示
+						var mesh5 = createMnode("Mesh", 0, -50,'Q-exchanger2');
+							//连线
+						graph.createEdeg(mesh2, mesh5); 
+					}
+					
+				}
+				}
+				
+				//4号节点邻居表的信息
+				var arr4 = arr[3].split(':');
+				if(!arr4.length == 0){
+				var node4_arr = [];
+				for (var i = 0; i < Math.floor(arr4.length /4); i++) {
+					node4_arr.push(arr4[4*i]);
+				}		
+				for(var j=0;j<node4_arr.length;j++){
+					//先判断node3_arr[0]的数字
+					if(node4_arr[j]==3){
+						//显示
+	   					var mesh3 = createMnode("Mesh", 0, -350,'Q-exchanger2');
+						//连线
+	   					graph.createEdeg( mesh4, mesh3); 
+					}
+					if(node4_arr[j]==2){
+						//显示
+					 var mesh2 = createMnode("Mesh", -300, -200,'Q-exchanger2');
+					//连线
+					 graph.createEdeg(mesh4, mesh2); 
+					}
+					if(node4_arr[j]==5){
+						//显示
+					var mesh5 = createMnode("Mesh", 0, -50,'Q-exchanger2');
+						//连线
+					graph.createEdeg(mesh2, mesh5); 
+					}
+					
+				}
+				}
+				//5号节点邻居表的信息
+				var arr5 = arr[4].split(':');
+				if(!arr5.length == 0){
+				var node5_arr = [];
+				for (var i = 0; i < Math.floor(arr5.length /4); i++) {
+					node5_arr.push(arr5[4*i]);
+				}		
+				for(var j=0;j<node5_arr.length;j++){
+					
+					//先判断node3_arr[0]的数字
+					if(node5_arr[j]==3){
+						//显示
+	   					var mesh3 = createMnode("Mesh", 0, -350,'Q-exchanger2');
+						//连线
+	   					graph.createEdeg( mesh5, mesh3); 
+					}
+					if(node5_arr[j]==2){
+						//显示
+					 var mesh2 = createMnode("Mesh", -300, -200,'Q-exchanger2');
+					 graph.createEdeg(mesh5, mesh2); 
+						//连线
+					}
+					if(node5_arr[j]==4){
+						//显示
+					var mesh4 = createMnode("Mesh", 300,-200,'Q-exchanger2');
+						//连线
+					graph.createEdeg(mesh5, mesh4); 
+					}
+					
+				}
+				}
+				
+		}
+		
+		xhr.open("POST", "SDN_Servlet", true);
+		xhr.setRequestHeader("Content-Type",
+				"application/x-www-form-urlencoded;charset=UTF-8");
+		xhr.send();
 
-   var graph = new Q.Graph('page-inner');
-   
-   function createDedge(from,to){
-       var edge = graph.createEdge(from,to);
-       edge.setStyle(Q.Styles.ARROW_FROM, true);  
-       return edge;
-   }  //定义双向箭头连线
-  
-   function createMnode(name,x,y,image){
-       var node = graph.createNode(name,x,y);
-       if(image){
-           node.image = image;
-       }
-       return node;
-   }  //定义图标
-  
-   var controler = createMnode("Controler", 0, -500,'Q-server');
-   var mesh1 = createMnode("Mesh1", 0, -350,'Q-exchanger2');
-   var mesh2 = createMnode("Mesh2", -300, -200,'Q-exchanger2');
-   var mesh3 = createMnode("Mesh3", 0, -50,'Q-exchanger2');
-   var mesh4 = createMnode("Mesh4", 300, -200,'Q-exchanger2');
-  
-   var edge0 = createDedge( controler, mesh1); 
-   var edge1 = createDedge( mesh1, mesh2);
-   var edge2 = createDedge( mesh2, mesh3);
-   var edge3 = createDedge( mesh3, mesh4);
-   var edge4 = createDedge( mesh4, mesh1);
-   
-   var ap11 = createMnode("AP1-1", -75, -200,'PC.svg');
-   var ap12 = createMnode("AP1-2", 75, -200,'Mobile.svg');
-   var ap21 = createMnode("AP2-1", -375, -50,'PC.svg');
-   var ap22 = createMnode("AP2-2", -225, -50,'Mobile.svg');
-   var ap31 = createMnode("AP3-1", -75, 100,'PC.svg');
-   var ap32 = createMnode("AP3-2", 75, 100,'Mobile.svg');
-   var ap41 = createMnode("AP4-1", 225, -50,'PC.svg');
-   var ap42 = createMnode("AP4-2", 375, -50,'Mobile.svg');
-  
-   var edge5 = createDedge( ap11, mesh1);
-   var edge6 = createDedge( ap12, mesh1);
-   var edge7 = createDedge( ap21, mesh2);
-   var edge8 = createDedge( ap22, mesh2);
-   var edge9 = createDedge( ap31, mesh3);
-   var edge10 = createDedge( ap32, mesh3);
-   var edge11 = createDedge( ap41, mesh4);
-   var edge12 = createDedge( ap42, mesh4);
-  
+	}
+	setInterval(createXhr, 1000);
+
   </script>-->
 
 </body>

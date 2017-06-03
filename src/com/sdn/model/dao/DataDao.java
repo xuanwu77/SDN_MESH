@@ -13,10 +13,11 @@ import com.sdn.model.NbRouterInfo;
 
 public class DataDao {
 
-	RouterInfo  routerinfo = null;
-	//Êý¾Ý¿â²Ù×÷Óï·¨ 
-	//RouterInfo select	
-	public List queryRouterInfo()throws Exception{
+	RouterInfo routerinfo = null;
+
+	// ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½ï·¨
+	// RouterInfo select
+	public List queryRouterInfo() throws Exception {
 		DBUtil db = new DBUtil();
 		Connection conn = db.getConnection();
 		List<RouterInfo> result = new ArrayList<RouterInfo>();
@@ -27,21 +28,21 @@ public class DataDao {
 
 		ResultSet rs = ptmt.executeQuery();
 		while (rs.next()) {
-			RouterInfo routerinfo= new RouterInfo();
+			RouterInfo routerinfo = new RouterInfo();
 			routerinfo.setRtId(rs.getInt("rtId"));
 			routerinfo.setRtIp(rs.getString("rtIp"));
 			routerinfo.setMemory(rs.getString("memory"));
 			routerinfo.setCPU(rs.getString("cpu"));
 			routerinfo.setRecRate(rs.getString("recRate"));
 			routerinfo.setSenRate(rs.getString("senRate"));
-			
+
 			result.add(routerinfo);
 		}
 		return result;
 	}
-	
-	//ÁÚ¾Ó½Úµã2ÐÅÏ¢select
-	public List queryNbRouterInfo2()throws Exception{
+
+	// ï¿½Ú¾Ó½Úµï¿½2ï¿½ï¿½Ï¢select
+	public List queryNbRouterInfo2() throws Exception {
 		DBUtil db = new DBUtil();
 		Connection conn = db.getConnection();
 		List<NbRouterInfo> result = new ArrayList<NbRouterInfo>();
@@ -52,19 +53,18 @@ public class DataDao {
 
 		ResultSet rs = ptmt.executeQuery();
 		while (rs.next()) {
-			NbRouterInfo nbRouterInfo= new NbRouterInfo();
+			NbRouterInfo nbRouterInfo = new NbRouterInfo();
 			nbRouterInfo.setNb_Ip(rs.getString("nbIp"));
 			nbRouterInfo.setDelay(rs.getString("delay"));
 			nbRouterInfo.setPktloss(rs.getString("pktLoss"));
 			nbRouterInfo.setSS(rs.getString("ss"));
-			
-			
+
 			result.add(nbRouterInfo);
 		}
 		return result;
 	}
-	
-	public List queryNbRouterInfo3()throws Exception{
+
+	public List queryNbRouterInfo3() throws Exception {
 		DBUtil db = new DBUtil();
 		Connection conn = db.getConnection();
 		List<NbRouterInfo> result = new ArrayList<NbRouterInfo>();
@@ -75,19 +75,18 @@ public class DataDao {
 
 		ResultSet rs = ptmt.executeQuery();
 		while (rs.next()) {
-			NbRouterInfo nbRouterInfo= new NbRouterInfo();
+			NbRouterInfo nbRouterInfo = new NbRouterInfo();
 			nbRouterInfo.setNb_Ip(rs.getString("nbIp"));
 			nbRouterInfo.setDelay(rs.getString("delay"));
 			nbRouterInfo.setPktloss(rs.getString("pktLoss"));
 			nbRouterInfo.setSS(rs.getString("ss"));
-			
-			
+
 			result.add(nbRouterInfo);
 		}
 		return result;
 	}
-	
-	public List queryNbRouterInfo4()throws Exception{
+
+	public List queryNbRouterInfo4() throws Exception {
 		DBUtil db = new DBUtil();
 		Connection conn = db.getConnection();
 		List<NbRouterInfo> result = new ArrayList<NbRouterInfo>();
@@ -98,19 +97,18 @@ public class DataDao {
 
 		ResultSet rs = ptmt.executeQuery();
 		while (rs.next()) {
-			NbRouterInfo nbRouterInfo= new NbRouterInfo();
+			NbRouterInfo nbRouterInfo = new NbRouterInfo();
 			nbRouterInfo.setNb_Ip(rs.getString("nbIp"));
 			nbRouterInfo.setDelay(rs.getString("delay"));
 			nbRouterInfo.setPktloss(rs.getString("pktLoss"));
 			nbRouterInfo.setSS(rs.getString("ss"));
-			
-			
+
 			result.add(nbRouterInfo);
 		}
 		return result;
 	}
-	
-	public List queryNbRouterInfo5()throws Exception{
+
+	public List queryNbRouterInfo5() throws Exception {
 		DBUtil db = new DBUtil();
 		Connection conn = db.getConnection();
 		List<NbRouterInfo> result = new ArrayList<NbRouterInfo>();
@@ -121,18 +119,14 @@ public class DataDao {
 
 		ResultSet rs = ptmt.executeQuery();
 		while (rs.next()) {
-			NbRouterInfo nbRouterInfo= new NbRouterInfo();
+			NbRouterInfo nbRouterInfo = new NbRouterInfo();
 			nbRouterInfo.setNb_Ip(rs.getString("nbIp"));
 			nbRouterInfo.setDelay(rs.getString("delay"));
 			nbRouterInfo.setPktloss(rs.getString("pktLoss"));
 			nbRouterInfo.setSS(rs.getString("ss"));
-			
-			
+
 			result.add(nbRouterInfo);
 		}
 		return result;
 	}
 }
-	
-	
-

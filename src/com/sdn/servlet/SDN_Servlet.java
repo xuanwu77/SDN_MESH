@@ -21,139 +21,122 @@ import com.sdn.model.dao.DataDao;
  */
 @WebServlet("/SDN_Servlet")
 public class SDN_Servlet extends HttpServlet {
-	private List list;
-	
-	private static final long serialVersionUID = 1L;
-	
-    public SDN_Servlet() {
-        super();
-        
-    }
-    
-    public void init() throws ServletException{
-    	
-    }
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.doPost(request,response);
+	private List list1;
+	private List list2;
+	private List list3;
+	private List list4;
+	private List list5;
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		this.doPost(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {       		
-		
-		DataDao dataDao=new DataDao();
-		list = new ArrayList<>();
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		DataDao dataDao = new DataDao();
+		list1 = new ArrayList();
+		list2 = new ArrayList();
+		list3 = new ArrayList();
+		list4 = new ArrayList();
+		list5 = new ArrayList();
 		String str = "";
-		String str1="";
-		String str2="";
-		String str3="";
-		String str4="";
-		String str5="";
-		
-		try {	
-			//×Ü±íÐÅÏ¢¶ÁÈ¡
-			list=dataDao.queryRouterInfo();
-			if(list!=null) {
-		        if(list.size()>0){   						  
-		      	   RouterInfo routerInfo;
-		            for(int i=0;i<list.size();i++){
-		            	routerInfo=(RouterInfo)list.get(i); 
-		          	 /* str = str.append(epcData.getIp()).append(":").append(epcData.getSyn()).append(":")
-		          	.append(epcData.geteNode()).append(":").append(epcData.getPlmn()).append(":")
-		          	.append(epcData.getTac()).append(":").append(epcData.getPci()).append(":").append(epcData.getCell_id());*/
-		          	  str1 += routerInfo.getRtId()+":"+routerInfo.getRtIp()+":"+routerInfo.getMemory()+
-		          			":"+routerInfo.getCPU()+":"+routerInfo.getRecRate()+":"+routerInfo.getSenRate()+":";
-		          	  System.out.println(str);
-		     	      }
-		            
-		 		   }
-		        
+		String str1 = "";
+		String str2 = "";
+		String str3 = "";
+		String str4 = "";
+		String str5 = "";
+
+		try {
+			// ï¿½Ü±ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½È¡
+			list1 = dataDao.queryRouterInfo();
+			if (list1 != null) {
+				if (list1.size() > 0) {
+					RouterInfo routerInfo;
+					for (int i = 0; i < list1.size(); i++) {
+						routerInfo = (RouterInfo) list1.get(i);
+						str1 += routerInfo.getRtId() + ":" + routerInfo.getRtIp() + ":" + routerInfo.getMemory() + ":"
+								+ routerInfo.getCPU() + ":" + routerInfo.getRecRate() + ":" + routerInfo.getSenRate()
+								+ ":";
+						System.out.println(str);
+					}
+
+				}
+
 			}
+
+			// 2ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½È¡
+			list2 = dataDao.queryNbRouterInfo2();
+			if (list2 != null) {
+				if (list2.size() > 0) {
+					NbRouterInfo nbrouterInfo;
+					for (int i = 0; i < list2.size(); i++) {
+						nbrouterInfo = (NbRouterInfo) list2.get(i);
+						str2 += nbrouterInfo.getNb_Ip() + ":" + nbrouterInfo.getDelay() + ":"
+								+ nbrouterInfo.getPktloss() + ":" + nbrouterInfo.getSS() + ":";
+						System.out.println(str2);
+					}
+
+				}
+
+			}
+			// 3ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½È¡
 			
-			//2±íÐÅÏ¢¶ÁÈ¡
-			list.clear();
-			list=dataDao.queryNbRouterInfo2();
-			if(list!=null) {
-		        if(list.size()>0){   						  
-		      	   NbRouterInfo nbrouterInfo;
-		            for(int i=0;i<list.size();i++){
-		            	nbrouterInfo=(NbRouterInfo)list.get(i); 
-		          	 /* str = str.append(epcData.getIp()).append(":").append(epcData.getSyn()).append(":")
-		          	.append(epcData.geteNode()).append(":").append(epcData.getPlmn()).append(":")
-		          	.append(epcData.getTac()).append(":").append(epcData.getPci()).append(":").append(epcData.getCell_id());*/
-		          	  str2 += nbrouterInfo.getNb_Ip()+":"+nbrouterInfo.getDelay()+":"+nbrouterInfo.getPktloss()+":"+nbrouterInfo.getSS()+
-		          			":";
-		          	  System.out.println(str2);
-		     	      }
-		            
-		 		   }
-		        
-			}	
-			//3±íÐÅÏ¢¶ÁÈ¡
-			list.clear();
-			list=dataDao.queryNbRouterInfo3();
-			if(list!=null) {
-		        if(list.size()>0){   						  
-		      	   NbRouterInfo nbrouterInfo;
-		            for(int i=0;i<list.size();i++){
-		            	nbrouterInfo=(NbRouterInfo)list.get(i); 
-		          	 /* str = str.append(epcData.getIp()).append(":").append(epcData.getSyn()).append(":")
-		          	.append(epcData.geteNode()).append(":").append(epcData.getPlmn()).append(":")
-		          	.append(epcData.getTac()).append(":").append(epcData.getPci()).append(":").append(epcData.getCell_id());*/
-		          	  str3 += nbrouterInfo.getNb_Ip()+":"+nbrouterInfo.getDelay()+":"+nbrouterInfo.getPktloss()+":"+nbrouterInfo.getSS()+
-		          			":";
-		          	  System.out.println(str3);
-		     	      }
-		            
-		 		   }
-		        
+			list3 = dataDao.queryNbRouterInfo3();
+			if (list3 != null) {
+				if (list3.size() > 0) {
+					NbRouterInfo nbrouterInfo;
+					for (int i = 0; i < list3.size(); i++) {
+						nbrouterInfo = (NbRouterInfo) list3.get(i);
+						str3 +=nbrouterInfo.getNb_Ip() + ":" + nbrouterInfo.getDelay() + ":"
+								+ nbrouterInfo.getPktloss() + ":" + nbrouterInfo.getSS() + ":";
+						System.out.println(str3);
+					}
+
+				}
+
 			}
+
+			// 4ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½È¡
 			
-			//4±íÐÅÏ¢¶ÁÈ¡
-			list.clear();
-			list=dataDao.queryNbRouterInfo4();
-			if(list!=null) {
-		        if(list.size()>0){   						  
-		      	   NbRouterInfo nbrouterInfo;
-		            for(int i=0;i<list.size();i++){
-		            	nbrouterInfo=(NbRouterInfo)list.get(i); 
-		          	 /* str = str.append(epcData.getIp()).append(":").append(epcData.getSyn()).append(":")
-		          	.append(epcData.geteNode()).append(":").append(epcData.getPlmn()).append(":")
-		          	.append(epcData.getTac()).append(":").append(epcData.getPci()).append(":").append(epcData.getCell_id());*/
-		          	  str4 += nbrouterInfo.getNb_Ip()+":"+nbrouterInfo.getDelay()+":"+nbrouterInfo.getPktloss()+":"+nbrouterInfo.getSS()+
-		          			":";
-		          	  System.out.println(str4);
-		     	      }
-		            
-		 		   }
-		        
+			list4 = dataDao.queryNbRouterInfo4();
+			if (list4 != null) {
+				if (list4.size() > 0) {
+					NbRouterInfo nbrouterInfo;
+					for (int i = 0; i < list4.size(); i++) {
+						nbrouterInfo = (NbRouterInfo) list4.get(i);
+						str4 += nbrouterInfo.getNb_Ip() + ":" + nbrouterInfo.getDelay() + ":"
+								+ nbrouterInfo.getPktloss() + ":" + nbrouterInfo.getSS() + ":";
+						System.out.println(str4);
+					}
+
+				}
+
 			}
-			//5±íÐÅÏ¢¶ÁÈ¡
-			list.clear();
-			list=dataDao.queryNbRouterInfo5();
-			if(list!=null) {
-		        if(list.size()>0){   						  
-		      	   NbRouterInfo nbrouterInfo;
-		            for(int i=0;i<list.size();i++){
-		            	nbrouterInfo=(NbRouterInfo)list.get(i); 
-		          	 /* str = str.append(epcData.getIp()).append(":").append(epcData.getSyn()).append(":")
-		          	.append(epcData.geteNode()).append(":").append(epcData.getPlmn()).append(":")
-		          	.append(epcData.getTac()).append(":").append(epcData.getPci()).append(":").append(epcData.getCell_id());*/
-		          	  str5 += nbrouterInfo.getNb_Ip()+":"+nbrouterInfo.getDelay()+":"+nbrouterInfo.getPktloss()+":"+nbrouterInfo.getSS()+
-		          			":";
-		          	  System.out.println(str5);
-		     	      }
-		            
-		 		   }
-		        
+			// 5ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½È¡
+			
+			list5 = dataDao.queryNbRouterInfo5();
+			if (list5 != null) {
+				if (list5.size() > 0) {
+					NbRouterInfo nbrouterInfo;
+					for (int i = 0; i < list5.size(); i++) {
+						nbrouterInfo = (NbRouterInfo) list5.get(i);
+						str5 += nbrouterInfo.getNb_Ip() + ":" + nbrouterInfo.getDelay() + ":"
+								+ nbrouterInfo.getPktloss() + ":" + nbrouterInfo.getSS() + ":";
+						System.out.println(str5);
+					}
+
+				}
+
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		str = str1+"*"+str2+"*"+str3+"*"+str4+"*"+str5;
+		str = str1 + "*" + str2 + "*" + str3 + "*" + str4 + "*" + str5;
 		str = str.replaceAll("null", "");
 		response.setContentType("text/xml;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        out.write(str);
-        out.close();
-		list.clear();
+		PrintWriter out = response.getWriter();
+		out.write(str);
+		out.close();
+		
 	}
 }
