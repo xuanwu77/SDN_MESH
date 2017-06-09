@@ -21,6 +21,7 @@ import com.sdn.model.dao.DataDao;
  */
 @WebServlet("/SDN_Servlet")
 public class SDN_Servlet extends HttpServlet {
+	
 	private List list1;
 	private List list2;
 	private List list3;
@@ -39,13 +40,24 @@ public class SDN_Servlet extends HttpServlet {
 		list3 = new ArrayList();
 		list4 = new ArrayList();
 		list5 = new ArrayList();
+		
 		String str = "";
+		String st = "";
+		
 		String str1 = "";
 		String str2 = "";
 		String str3 = "";
 		String str4 = "";
 		String str5 = "";
+		
+		String str11 = "";
+		String str22 = "";
+		String str33 = "";
+		String str44 = "";
+		String str55 = "";
 
+		String para = request.getParameter("para");
+		System.out.println(para+"...........................");
 		try {
 			// �ܱ���Ϣ��ȡ
 			list1 = dataDao.queryRouterInfo();
@@ -57,7 +69,7 @@ public class SDN_Servlet extends HttpServlet {
 						str1 += routerInfo.getRtId() + ":" + routerInfo.getRtIp() + ":" + routerInfo.getMemory() + ":"
 								+ routerInfo.getCPU() + ":" + routerInfo.getRecRate() + ":" + routerInfo.getSenRate()
 								+ ":";
-						System.out.println(str);
+						str11+=routerInfo.getRtId();
 					}
 
 				}
@@ -73,7 +85,8 @@ public class SDN_Servlet extends HttpServlet {
 						nbrouterInfo = (NbRouterInfo) list2.get(i);
 						str2 += nbrouterInfo.getNb_Ip() + ":" + nbrouterInfo.getDelay() + ":"
 								+ nbrouterInfo.getPktloss() + ":" + nbrouterInfo.getSS() + ":";
-						System.out.println(str2);
+						
+						str22+=nbrouterInfo.getNb_Ip();
 					}
 
 				}
@@ -89,7 +102,7 @@ public class SDN_Servlet extends HttpServlet {
 						nbrouterInfo = (NbRouterInfo) list3.get(i);
 						str3 +=nbrouterInfo.getNb_Ip() + ":" + nbrouterInfo.getDelay() + ":"
 								+ nbrouterInfo.getPktloss() + ":" + nbrouterInfo.getSS() + ":";
-						System.out.println(str3);
+						str33+=nbrouterInfo.getNb_Ip();
 					}
 
 				}
@@ -106,7 +119,7 @@ public class SDN_Servlet extends HttpServlet {
 						nbrouterInfo = (NbRouterInfo) list4.get(i);
 						str4 += nbrouterInfo.getNb_Ip() + ":" + nbrouterInfo.getDelay() + ":"
 								+ nbrouterInfo.getPktloss() + ":" + nbrouterInfo.getSS() + ":";
-						System.out.println(str4);
+						str44+=nbrouterInfo.getNb_Ip();
 					}
 
 				}
@@ -122,7 +135,7 @@ public class SDN_Servlet extends HttpServlet {
 						nbrouterInfo = (NbRouterInfo) list5.get(i);
 						str5 += nbrouterInfo.getNb_Ip() + ":" + nbrouterInfo.getDelay() + ":"
 								+ nbrouterInfo.getPktloss() + ":" + nbrouterInfo.getSS() + ":";
-						System.out.println(str5);
+						str55+=nbrouterInfo.getNb_Ip();
 					}
 
 				}
@@ -131,12 +144,21 @@ public class SDN_Servlet extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		str = str1 + "*" + str2 + "*" + str3 + "*" + str4 + "*" + str5;
-		str = str.replaceAll("null", "");
-		response.setContentType("text/xml;charset=UTF-8");
-		PrintWriter out = response.getWriter();
-		out.write(str);
-		out.close();
-		
+		if(para.equals("router")){
+			str = str1 + "*" + str2 + "*" + str3 + "*" + str4 + "*" + str5;
+			str = str.replaceAll("null", "");
+			response.setContentType("text/xml;charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.write(str);
+			out.close();
+		}
+		if(para.equals("topology")){
+			st = str11 + "*" + str22 + "*" + str33 + "*" + str44 + "*" + str55;
+			st = st.replaceAll("null", "");
+			response.setContentType("text/xml;charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.write(st);
+			out.close();
+		}
 	}
 }

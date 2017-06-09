@@ -50,206 +50,21 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                         <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-<!--                     <ul class="dropdown-menu dropdown-messages">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Doe</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Today</em>
-                                    </span>
-                                </div>
-                                <div>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem Ipsum has been the industry's standard dummy text ever since an kwilnw...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem Ipsum has been the industry's standard dummy text ever since the...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>Read All Messages</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
- -->                    <!-- /.dropdown-messages -->
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                        <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-<!--                     <ul class="dropdown-menu dropdown-tasks">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 1</strong>
-                                        <span class="pull-right text-muted">60% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                            <span class="sr-only">60% Complete (success)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 2</strong>
-                                        <span class="pull-right text-muted">28% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100" style="width: 28%">
-                                            <span class="sr-only">28% Complete</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 3</strong>
-                                        <span class="pull-right text-muted">60% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                            <span class="sr-only">60% Complete (warning)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 4</strong>
-                                        <span class="pull-right text-muted">85% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
-                                            <span class="sr-only">85% Complete (danger)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>See All Tasks</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
- -->                    <!-- /.dropdown-tasks -->
+                   
                 </li>
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                         <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-<!--                     <ul class="dropdown-menu dropdown-alerts">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-comment fa-fw"></i> New Comment
-                                    <span class="pull-right text-muted small">4 min</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                    <span class="pull-right text-muted small">12 min</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                    <span class="pull-right text-muted small">4 min</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-tasks fa-fw"></i> New Task
-                                    <span class="pull-right text-muted small">4 min</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                    <span class="pull-right text-muted small">4 min</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>See All Alerts</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
- -->                    <!-- /.dropdown-alerts -->
+
                 </li>
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-<!--                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
- -->                    <!-- /.dropdown-user -->
+
                 </li>
                 <!-- /.dropdown -->
             </ul>
@@ -309,15 +124,8 @@
 									
 		</div>
             <div id="page-inner" style="height:400px;">
-	
-              
-         
 			
-		
 				
-				
-        
-			
             </div>
             <!-- /. PAGE INNER  -->
         </div>
@@ -345,23 +153,13 @@
     <!-- Custom Js -->
     <script src="./assets/js/custom-scripts.js"></script>
 
-      
-   
-
-
-    
-
-
-
-
-
-
 
     <script src="./Qunee-H5-v2.6.04/demos/lib/qunee-min.js"></script>
 	<script src="./Qunee-H5-v2.6.04/demos/lib/PC.js"></script>
   	<script src="./Qunee-H5-v2.6.04/demos/lib/Mobile.js"></script>
   	<script>
   	var graph = new Q.Graph('page-inner');
+  	
   	//定义双向箭头连线
     function createDedge(from,to){
         var edge = graph.createEdge(from,to);
@@ -377,155 +175,164 @@
         return node;
     }  
   	var controler = createMnode("Controler", 0, -500,'Q-server');
-  	var xhr = new XMLHttpRequest();
+  	var mesh2,mesh3,mesh4,mesh5;
+  	var x = [-300,0,300,0];
+  	var y = [-200,-350,-200,-50];
+   	var xhr = new XMLHttpRequest();
 	function createXhr() {
 		xhr.onreadystatechange = function() {
-			console.log(xhr.responseText);
+			
 			if (xhr.readyState == 4 && xhr.status == 200
 					&& xhr.responseText != "") {
 				var str = xhr.responseText;
+				console.log(str);
+				var arr = str.split("*");
+				var arr1 = arr[0].split(":");
+				var arr2 = arr[1].split(":");
+				var arr3 = arr[2].split(":");
+				var arr4 = arr[3].split(":");
+				var arr5 = arr[4].split(":");
+				
+				//思路：先添加针对某个路由器的表内的数据
+				//再把所有的东西都添加进来
+				
+				
+				
+				for(var i=0;i<arr1.length;i++){
+					if(arr1[i]==3&&mesh3== null ){
+						mesh3 = createMnode("Mesh3", x[1], y[1],'Q-exchanger2');
+						edge = createDedge(controler,mesh3);
+						
+					}
+					if(arr1[i]==2&&mesh2== null ){
+						mesh2 = createMnode("Mesh2", x[0], y[0],'Q-exchanger2');
+						/* graph.createEdge(mesh2, mesh3); */
+					}
+				
+					if(arr1[i]==4&&mesh4== null ){
+						mesh4 = createMnode("Mesh4", x[2], y[2],'Q-exchanger2');
+						/* graph.createEdge(mesh4, mesh3); */
+					}
+					if(arr1[i]==5&&mesh5== null ){
+						mesh5 = createMnode("Mesh5", x[3], y[3],'Q-exchanger2');
+						/* graph.createEdge(mesh5, mesh3); */
+					}
+					
+/* 					for(int j=2;j<=5;j++){
+						if(arr1[i]==j){
+							createMnode("Mesh"+j, x[j-2], y[j-2],'Q-exchanger2');
+						}
+					} */
+				}
+				for(var i=1;i<5;i++){
+					var arr2 = arr[i].split(":");
+					for(var j=0;j<arr2.length;j++){
+						if(i==1){
+							if(arr2[j]==4){
+								graph.createEdge(mesh2, mesh4);
+							}
+                            if(arr2[j]==5){
+                            	graph.createEdge(mesh2, mesh5);
+							}
+						}
+                        if(i==3){
+                        	if(arr2[j]==5){
+                            	graph.createEdge(mesh4, mesh5);
+							}
+						}
+					}
+				}
+				
+				
+				
+				
+		/* 	  	console.log();
 				var arr = str.split("*");
 				
 				//3号节点邻居表的信息
 				var arr3 = arr[2].split(':');
 				if(!arr3.length == 0){
-					var mesh3 = createMnode("Mesh", 0, -350,'Q-exchanger2');
-					createDedge(controller,mesh3);
+					if(mesh3== null ){
+						mesh3 = createMnode("Mesh3", 0, -350,'Q-exchanger2');
+						edge = createDedge(controler,mesh3);
+					}
 					var node3_arr = [];
 					for (var i = 0; i < Math.floor(arr3.length /4); i++) {
-						node3_arr.push(arr1[4*i]);
-					}		
+						node3_arr.push(arr3[4*i]);
+					}	
 					for(var j=0;j<node3_arr.length;j++){
-						//先判断node3_arr[0]的数字
-						if(node3_arr[j]==2){
+			            //先判断node3_arr[0]的数字
+						if(node3_arr[j]==2&&mesh2==null){
 							//显示
-		   					var mesh2 = createMnode("Mesh", -300, -200,'Q-exchanger2');
-							//连线
-		   					createDedge( mesh3, mesh2); 
-						}
-						if(node3_arr[j]==4){
-							//显示
-							 var mesh4 = createMnode("Mesh", 300, -200,'Q-exchanger2');
-							 graph.createEdge(mesh3, mesh4); 
+							mesh2 = createMnode("Mesh2", -300, -200,'Q-exchanger2');
+							graph.createEdge(mesh3, mesh2); 
 							//连线
 						}
-						if(node3_arr[j]==5){
+						if(node3_arr[j]==4&&mesh4==null){
 							//显示
-							var mesh5 = createMnode("Mesh", 0, -50,'Q-exchanger2');
-								//连线
+							mesh4 = createMnode("Mesh4", 300, -200,'Q-exchanger2');
+							graph.createEdge(mesh3, mesh4); 
+							//连线
+						}
+						if(node3_arr[j]==5&&mesh5==null){
+							//显示
+							mesh5 = createMnode("Mesh5", 0, -50,'Q-exchanger2');
+							//连线
 							graph.createEdge(mesh3, mesh5); 
-						}
-						
+					   }
 					}
-					
-					
 				}
 				
 				//2号节点邻居表的信息
-				var arr2 = arr[1].split(':');
+			    var arr2 = arr[1].split(':');
 				if(!arr2.length == 0){
-				var mesh2 = createMnode("Mesh", -300, -200,'Q-exchanger2');	
+				//var mesh2 = createMnode("Mesh", -300, -200,'Q-exchanger2');	
 				var node2_arr = [];
 				for (var i = 0; i < Math.floor(arr2.length /4); i++) {
 					node2_arr.push(arr2[4*i]);
-				}		
+				}	
 				for(var j=0;j<node2_arr.length;j++){
 					//先判断node3_arr[0]的数字
-					if(node2_arr[j]==3){
+					if(node2_arr[j]==3 && mesh3==null){
 						//显示
-	   					var mesh3 = createMnode("Mesh", 0, -350,'Q-exchanger2');
-						//连线
-	   					graph.createEdeg( mesh2, mesh3); 
+	   					mesh3 = createMnode("Mesh", 0, -350,'Q-exchanger2');
+						
 					}
-					if(node2_arr[j]==4){
+					if(node2_arr[j]==3 && mesh3!=null){
+						//连线
+	   					graph.createEdge( mesh2, mesh3); 
+					}
+					if(node2_arr[j]==4 && mesh4==null){
 						//显示
-						 var mesh4 = createMnode("Mesh", 300, -200,'Q-exchanger2');
-						 graph.createEdeg(mesh2, mesh4); 
+						 mesh4 = createMnode("Mesh", 300, -200,'Q-exchanger2');
+						 graph.createEdge(mesh2, mesh4); 
 						//连线
 					}
-					if(node2_arr[j]==5){
+					if(node2_arr[j]==5&& mesh5==null){
 							//显示
-						var mesh5 = createMnode("Mesh", 0, -50,'Q-exchanger2');
+						mesh5 = createMnode("Mesh", 0, -50,'Q-exchanger2');
 							//连线
-						graph.createEdeg(mesh2, mesh5); 
+						graph.createEdge(mesh2, mesh5); 
 					}
 					
 				}
-				}
+				}  */
 				
-				//4号节点邻居表的信息
-				var arr4 = arr[3].split(':');
-				if(!arr4.length == 0){
-				var node4_arr = [];
-				for (var i = 0; i < Math.floor(arr4.length /4); i++) {
-					node4_arr.push(arr4[4*i]);
-				}		
-				for(var j=0;j<node4_arr.length;j++){
-					//先判断node3_arr[0]的数字
-					if(node4_arr[j]==3){
-						//显示
-	   					var mesh3 = createMnode("Mesh", 0, -350,'Q-exchanger2');
-						//连线
-	   					graph.createEdeg( mesh4, mesh3); 
-					}
-					if(node4_arr[j]==2){
-						//显示
-					 var mesh2 = createMnode("Mesh", -300, -200,'Q-exchanger2');
-					//连线
-					 graph.createEdeg(mesh4, mesh2); 
-					}
-					if(node4_arr[j]==5){
-						//显示
-					var mesh5 = createMnode("Mesh", 0, -50,'Q-exchanger2');
-						//连线
-					graph.createEdeg(mesh2, mesh5); 
-					}
-					
-				}
-				}
-				//5号节点邻居表的信息
-				var arr5 = arr[4].split(':');
-				if(!arr5.length == 0){
-				var node5_arr = [];
-				for (var i = 0; i < Math.floor(arr5.length /4); i++) {
-					node5_arr.push(arr5[4*i]);
-				}		
-				for(var j=0;j<node5_arr.length;j++){
-					
-					//先判断node3_arr[0]的数字
-					if(node5_arr[j]==3){
-						//显示
-	   					var mesh3 = createMnode("Mesh", 0, -350,'Q-exchanger2');
-						//连线
-	   					graph.createEdeg( mesh5, mesh3); 
-					}
-					if(node5_arr[j]==2){
-						//显示
-					 var mesh2 = createMnode("Mesh", -300, -200,'Q-exchanger2');
-					 graph.createEdeg(mesh5, mesh2); 
-						//连线
-					}
-					if(node5_arr[j]==4){
-						//显示
-					var mesh4 = createMnode("Mesh", 300,-200,'Q-exchanger2');
-						//连线
-					graph.createEdeg(mesh5, mesh4); 
-					}
-					
-				}
-				}
 				
+				
+				
+			}
 		}
 		
-		xhr.open("POST", "SDN_Servlet", true);
+		xhr.open("POST", "SDN_Servlet?para=topology", true);
 		xhr.setRequestHeader("Content-Type",
 				"application/x-www-form-urlencoded;charset=UTF-8");
 		xhr.send();
-
+		
 	}
-	setInterval(createXhr, 1000);
+	setInterval(createXhr, 2000) 
 
-  </script>-->
+  </script>
 
 </body>
 
