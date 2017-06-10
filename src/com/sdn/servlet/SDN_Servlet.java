@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -57,7 +58,7 @@ public class SDN_Servlet extends HttpServlet {
 		String str55 = "";
 
 		String para = request.getParameter("para");
-		System.out.println(para+"...........................");
+		
 		try {
 			// 锟杰憋拷锟斤拷息锟斤拷取
 			list1 = dataDao.queryRouterInfo();
@@ -70,6 +71,11 @@ public class SDN_Servlet extends HttpServlet {
 								+ routerInfo.getCPU() + ":" + routerInfo.getRecRate() + ":" + routerInfo.getSenRate()
 								+ ":";
 						str11+=routerInfo.getRtId();
+						//可能要判断一下是否为空
+						
+					}
+					if (str11.length()==0) {
+						str11 = "NULL";
 					}
 
 				}
@@ -88,6 +94,9 @@ public class SDN_Servlet extends HttpServlet {
 						
 						str22+=nbrouterInfo.getNb_Ip();
 					}
+					if (str22.length()==0) {
+						str22 = "NULL";
+					}
 
 				}
 
@@ -104,7 +113,9 @@ public class SDN_Servlet extends HttpServlet {
 								+ nbrouterInfo.getPktloss() + ":" + nbrouterInfo.getSS() + ":";
 						str33+=nbrouterInfo.getNb_Ip();
 					}
-
+					if (str33.length()==0) {
+						str33 = "NULL";
+					}
 				}
 
 			}
@@ -121,12 +132,13 @@ public class SDN_Servlet extends HttpServlet {
 								+ nbrouterInfo.getPktloss() + ":" + nbrouterInfo.getSS() + ":";
 						str44+=nbrouterInfo.getNb_Ip();
 					}
-
+					if (str44.length()==0) {
+						str44 = "NULL";
+					}
 				}
 
 			}
 			// 5锟斤拷锟斤拷息锟斤拷取
-			
 			list5 = dataDao.queryNbRouterInfo5();
 			if (list5 != null) {
 				if (list5.size() > 0) {
@@ -137,7 +149,9 @@ public class SDN_Servlet extends HttpServlet {
 								+ nbrouterInfo.getPktloss() + ":" + nbrouterInfo.getSS() + ":";
 						str55+=nbrouterInfo.getNb_Ip();
 					}
-
+					if (str55.length()==0) {
+						str55 = "NULL";
+					}
 				}
 
 			}
@@ -145,7 +159,7 @@ public class SDN_Servlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		if(para.equals("router")){
-			str = str1 + "*" + str2 + "*" + str3 + "*" + str4 + "*" + str5;
+			str = str1 + "*"  +str2 + "*" + str3 + "*" + str4 + "*" + str5;
 			str = str.replaceAll("null", "");
 			response.setContentType("text/xml;charset=UTF-8");
 			PrintWriter out = response.getWriter();
@@ -153,12 +167,55 @@ public class SDN_Servlet extends HttpServlet {
 			out.close();
 		}
 		if(para.equals("topology")){
-			st = str11 + "*" + str22 + "*" + str33 + "*" + str44 + "*" + str55;
-			st = st.replaceAll("null", "");
+			
+			String nb_str = str22 + "*" + str33 + "*" + str44 + "*" + str55;
+			String res = solve_str(nb_str);
+			st = str11 + ";" + res;
+			//st = st.replaceAll("null", "");
 			response.setContentType("text/xml;charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.write(st);
 			out.close();
 		}
+	}
+	public static String solve_str(String str)
+	{
+		//格式35*24*35*24
+		String res = "";
+		String[] ele_list = str.split("\\*");
+		HashSet<String> topo_with_no_dupliacation = new HashSet<>();
+		for(int i = 0; i < ele_list.length; i ++)
+		{
+			String tmp = "";
+			int current_id = i+2;
+			//下面获得分开分好后的元素 例如：35
+			if(ele_list[i] == "NULL")
+			{
+				continue;
+			}
+			char[] curr_sub_ele = ele_list[i].toCharArray();//获得的就是35，并且被转换成了chararray
+			for(int j = 0;j<curr_sub_ele.length; j++)
+			{
+				int current_sub_id = curr_sub_ele[j]-48;
+				
+//				System.out.println("current_sub_id: "+current_sub_id);
+//				System.out.println("current_id: "+current_id);
+				if(current_id > current_sub_id)
+				{
+					topo_with_no_dupliacation.add(String.valueOf(current_sub_id)+String.valueOf(current_id));
+				}
+				else
+				{
+					topo_with_no_dupliacation.add(String.valueOf(current_id)+String.valueOf(current_sub_id));
+				}
+			}
+		}
+		for (String str23 : topo_with_no_dupliacation) 
+		{
+			System.out.println(str23);
+			res += str23+ "#";
+		}
+		System.out.println(res);
+		return res;
 	}
 }

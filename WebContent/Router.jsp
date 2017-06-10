@@ -43,7 +43,7 @@
                 </button>
                 <a class="navbar-brand" href="index.html"><strong>软件定义Mesh网络</strong></a>
 				
-		<div id="sideNav" href="">
+		<div id="sideNav" >
 		<i class="fa fa-bars icon"></i> 
 		</div>
             </div>
@@ -146,10 +146,10 @@
                                         <tr>
                                             <th>路由器编号</th>
                                             <th>路由器IP</th>
-                                            <th>内存使用率</th>
-                                            <th>CPU占用率</th>
-                                            <th>接收速率</th>
-                                            <th>发送速率</th>
+                                            <th>内存使用率(%)</th>
+                                            <th>CPU占用率(%)</th>
+                                            <th>接收速率(kB/s)</th>
+                                            <th>发送速率(kB/s)</th>
                                         </tr>
                                     </thead>
                                     <tbody id="router_table">
@@ -177,9 +177,9 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>延迟</th>
-                                            <th>丢包率</th>
-                                            <th>信号强度</th>
+                                            <th>延迟(ms)</th>
+                                            <th>丢包率(%)</th>
+                                            <th>信号强度(dBm)</th>
                                         </tr>
                                     </thead>
                                     <tbody id="nb_2">
@@ -203,10 +203,10 @@
                                 <table class="table  table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>延迟</th>
-                                            <th>丢包率</th>
-                                            <th>信号强度</th>
+                                           <th>#</th>
+                                            <th>延迟(ms)</th>
+                                            <th>丢包率(%)</th>
+                                            <th>信号强度(dBm)</th>
                                         </tr>
                                     </thead>
                                     <tbody id="nb_3">
@@ -233,9 +233,9 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>延迟</th>
-                                            <th>丢包率</th>
-                                            <th>信号强度</th>
+                                            <th>延迟(ms)</th>
+                                            <th>丢包率(%)</th>
+                                            <th>信号强度(dBm)</th>
                                         </tr>
                                     </thead>
                                     <tbody id="nb_4">
@@ -259,9 +259,9 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>延迟</th>
-                                            <th>丢包率</th>
-                                            <th>信号强度</th>
+                                            <th>延迟(ms)</th>
+                                            <th>丢包率(%)</th>
+                                            <th>信号强度(dBm)</th>
                                         </tr>
                                     </thead>
                                     <tbody id="nb_5">
@@ -366,7 +366,7 @@
 					"application/x-www-form-urlencoded;charset=UTF-8");
 			xhr.send();
 		}
-		setInterval(createXhr, 2000)
+		setInterval(createXhr, 1000)
 	</script>
 </body>
 </html>

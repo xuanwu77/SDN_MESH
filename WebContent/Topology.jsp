@@ -167,170 +167,69 @@
         return edge;
     }  
     //定义图标
-    function createMnode(name,x,y,image){
-        var node = graph.createNode(name,x,y);
+    function createMnode(name,node,image){
+        var node = graph.createNode(name,node[0],node[1]);
         if(image){
             node.image = image;
         }
         return node;
     }  
-  	var controler = createMnode("Controler", 0, -500,'Q-server');
+  	var controller = createMnode("Controller", [0, -500],'Q-server');
+  	
   	var mesh2,mesh3,mesh4,mesh5;
-  	var x = [-300,0,300,0];
-  	var y = [-200,-350,-200,-50];
+  	var dic_position = new Array();
+  	dic_position["2"] = [-300,-200];
+  	dic_position["3"] = [0,-350];
+  	dic_position["4"] = [300,-200];
+  	dic_position["5"] = [0,-50];
+  	
+  	/* var x = [-300,0,300,0];
+  	var y = [-200,-350,-200,-50]; */
    	var xhr = new XMLHttpRequest();
 	function createXhr() {
 		xhr.onreadystatechange = function() {
 			
 			if (xhr.readyState == 4 && xhr.status == 200
 					&& xhr.responseText != "") {
-				var str = xhr.responseText;
-				console.log(str);
-				var arr = str.split("*");
-				var arr1 = arr[0].split(":");
-				var arr2 = arr[1].split(":");
-				var arr3 = arr[2].split(":");
-				var arr4 = arr[3].split(":");
-				var arr5 = arr[4].split(":");
-				
-				//思路：先添加针对某个路由器的表内的数据
-				//再把所有的东西都添加进来
-				
-				
-				
-				for(var i=0;i<arr1.length;i++){
-					if(arr1[i]==3&&mesh3== null ){
-						mesh3 = createMnode("Mesh3", x[1], y[1],'Q-exchanger2');
-						edge = createDedge(controler,mesh3);
-						
-					}
-					if(arr1[i]==2&&mesh2== null ){
-						mesh2 = createMnode("Mesh2", x[0], y[0],'Q-exchanger2');
-						/* graph.createEdge(mesh2, mesh3); */
-					}
-				
-					if(arr1[i]==4&&mesh4== null ){
-						mesh4 = createMnode("Mesh4", x[2], y[2],'Q-exchanger2');
-						/* graph.createEdge(mesh4, mesh3); */
-					}
-					if(arr1[i]==5&&mesh5== null ){
-						mesh5 = createMnode("Mesh5", x[3], y[3],'Q-exchanger2');
-						/* graph.createEdge(mesh5, mesh3); */
-					}
-					
-/* 					for(int j=2;j<=5;j++){
-						if(arr1[i]==j){
-							createMnode("Mesh"+j, x[j-2], y[j-2],'Q-exchanger2');
-						}
-					} */
-				}
-				for(var i=1;i<5;i++){
-					var arr2 = arr[i].split(":");
-					for(var j=0;j<arr2.length;j++){
-						if(i==1){
-							if(arr2[j]==4){
-								graph.createEdge(mesh2, mesh4);
-							}
-                            if(arr2[j]==5){
-                            	graph.createEdge(mesh2, mesh5);
-							}
-						}
-                        if(i==3){
-                        	if(arr2[j]==5){
-                            	graph.createEdge(mesh4, mesh5);
-							}
-						}
-					}
-				}
-				
-				
-				
-				
-		/* 	  	console.log();
-				var arr = str.split("*");
-				
-				//3号节点邻居表的信息
-				var arr3 = arr[2].split(':');
-				if(!arr3.length == 0){
-					if(mesh3== null ){
-						mesh3 = createMnode("Mesh3", 0, -350,'Q-exchanger2');
-						edge = createDedge(controler,mesh3);
-					}
-					var node3_arr = [];
-					for (var i = 0; i < Math.floor(arr3.length /4); i++) {
-						node3_arr.push(arr3[4*i]);
-					}	
-					for(var j=0;j<node3_arr.length;j++){
-			            //先判断node3_arr[0]的数字
-						if(node3_arr[j]==2&&mesh2==null){
-							//显示
-							mesh2 = createMnode("Mesh2", -300, -200,'Q-exchanger2');
-							graph.createEdge(mesh3, mesh2); 
-							//连线
-						}
-						if(node3_arr[j]==4&&mesh4==null){
-							//显示
-							mesh4 = createMnode("Mesh4", 300, -200,'Q-exchanger2');
-							graph.createEdge(mesh3, mesh4); 
-							//连线
-						}
-						if(node3_arr[j]==5&&mesh5==null){
-							//显示
-							mesh5 = createMnode("Mesh5", 0, -50,'Q-exchanger2');
-							//连线
-							graph.createEdge(mesh3, mesh5); 
-					   }
-					}
-				}
-				
-				//2号节点邻居表的信息
-			    var arr2 = arr[1].split(':');
-				if(!arr2.length == 0){
-				//var mesh2 = createMnode("Mesh", -300, -200,'Q-exchanger2');	
-				var node2_arr = [];
-				for (var i = 0; i < Math.floor(arr2.length /4); i++) {
-					node2_arr.push(arr2[4*i]);
-				}	
-				for(var j=0;j<node2_arr.length;j++){
-					//先判断node3_arr[0]的数字
-					if(node2_arr[j]==3 && mesh3==null){
-						//显示
-	   					mesh3 = createMnode("Mesh", 0, -350,'Q-exchanger2');
-						
-					}
-					if(node2_arr[j]==3 && mesh3!=null){
-						//连线
-	   					graph.createEdge( mesh2, mesh3); 
-					}
-					if(node2_arr[j]==4 && mesh4==null){
-						//显示
-						 mesh4 = createMnode("Mesh", 300, -200,'Q-exchanger2');
-						 graph.createEdge(mesh2, mesh4); 
-						//连线
-					}
-					if(node2_arr[j]==5&& mesh5==null){
-							//显示
-						mesh5 = createMnode("Mesh", 0, -50,'Q-exchanger2');
-							//连线
-						graph.createEdge(mesh2, mesh5); 
+				var rec_str = xhr.responseText;  //str11 + ";" + res;
+				console.log(rec_str);
+				var arr = rec_str.split(";");
+				var router_node = arr[0]; //2345""
+				var nb_router_node = arr[1].split("#"); 
+				nb_router_node.forEach(function(item){
+					console.log(item);
+				})
+				var dic_createMnode = new Array();
+				graph.clear();
+				var controller = createMnode("Controller", [0, -500],'Q-server');
+				for(var i = 0;i <router_node.length;i++){
+					var curr_node_id =  router_node[i];
+					console.log("1111");
+					//createMnode("Mesh3",0,-350,'Q-exchanger2');
+					dic_createMnode[curr_node_id] = createMnode("Mesh",dic_position[curr_node_id],'Q-exchanger2');
+					if(router_node[i] == "3"){
+						createDedge(controller,dic_createMnode[curr_node_id]);
 					}
 					
 				}
-				}  */
 				
-				
-				
-				
+				for(var j = 0;j < nb_router_node.length-1;j++ ){
+					console.log("2222222222");
+					var first = nb_router_node[j][0];
+					var sec = nb_router_node[j][1];
+					createDedge(dic_createMnode[first],dic_createMnode[sec]);
+					
+				}
 			}
 		}
-		
 		xhr.open("POST", "SDN_Servlet?para=topology", true);
 		xhr.setRequestHeader("Content-Type",
 				"application/x-www-form-urlencoded;charset=UTF-8");
 		xhr.send();
 		
 	}
-	setInterval(createXhr, 2000) 
+	setInterval(createXhr, 1000) 
+	
 
   </script>
 
